@@ -60,6 +60,22 @@ natural_slopes.register_slope("default:dirt_with_snow", {
 	},
 	25
 )
+natural_slopes.register_slope("default:dirt_with_coniferous_litter", {
+	description = "Dirt with Coniferous Litter slope",
+	tiles = {top = "default_coniferous_litter.png",
+		bottom = "default_dirt.png",
+		front = "default_coniferous_litter.png",
+		side = {name = "default_dirt.png^default_coniferous_litter_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1},
+	drop = "default:dirt",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.4},
+	}),
+	drop = "default:dirt",
+	},
+	15
+)
 natural_slopes.register_slope("default:dirt_with_rainforest_litter", {
 	description = "Dirt with Rainforest Litter slope",
 	tiles = {top = "default_rainforest_litter.png",
@@ -136,4 +152,57 @@ natural_slopes.register_slope("default:snowblock", {
 	},
 	20
 )
+
+
+
+-- natural_slopes.register_slope("default:leaves", {
+	-- groups = {crumbly = 3},
+	-- tiles = {"default_leaves.png"},
+	-- description = "Leaves slope",
+	-- sounds = default.node_sound_dirt_defaults({
+		-- footstep = {['name'] = "node_sound_leaves_defaults", ['gain'] = 0.25},
+	-- })},
+	-- 10
+-- )
+
+-- natural_slopes.register_slope("default:jungleleaves", {
+	-- groups = {crumbly = 3},
+	-- tiles = {"default_jungleleaves.png"},
+	-- description = "Jungle Leaves slope",
+	-- sounds = default.node_sound_dirt_defaults({
+		-- footstep = {['name'] = "node_sound_leaves_defaults", ['gain'] = 0.25},
+	-- })},
+	-- 10
+-- )
+
+natural_slopes.register_slope("default:pine_needles", {
+	groups = {crumbly = 3},
+	tiles = {"default_pine_needles.png"},
+	description = "Pine Needles slope",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {['name'] = "node_sound_leaves_defaults", ['gain'] = 0.25},
+	})},
+	10
+)
+
+natural_slopes.register_slope("default:acacia_leaves", {
+	groups = {crumbly = 3},
+	tiles = {"default_acacia_leaves.png"},
+	description = "Acacia Leaves slope",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {['name'] = "node_sound_leaves_defaults", ['gain'] = 0.25},
+	})},
+	10
+)
+
+-- natural_slopes.register_slope("default:aspen_leaves", {
+	-- groups = {crumbly = 3},
+	-- tiles = {"default_aspen_leaves.png"},
+	-- description = "Aspen Leaves slope",
+	-- sounds = default.node_sound_dirt_defaults({
+		-- footstep = {['name'] = "node_sound_leaves_defaults", ['gain'] = 0.25},
+	-- })},
+	-- 10
+-- )
+
 
