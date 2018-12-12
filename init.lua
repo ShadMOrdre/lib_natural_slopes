@@ -18,12 +18,12 @@ end
 
 -- Set functions to get configuration and default values
 function natural_slopes.setting_enable_surface_update()
-	local value = minetest.setting_getbool('natural_slopes.enable_surface_update')
+	local value = minetest.setting_getbool('natural_slopes.enable_surface_update') or false
 	if value == nil then return true end
 	return value
 end
 function natural_slopes.setting_surface_update_interval()
-	return tonumber(minetest.setting_get('natural_slopes.surface_update_interval')) or 5.0
+	return tonumber(minetest.setting_get('natural_slopes.surface_update_interval')) or 1.0
 end
 function natural_slopes.setting_enable_shape_on_walk()
 	if not _G.poschangelib then return false end
@@ -38,12 +38,12 @@ function natural_slopes.setting_register_default_nodes()
 	return value
 end
 function natural_slopes.setting_enable_shape_on_generation()
-	local value = minetest.setting_getbool('natural_slopes.register_default_slopes')
+	local value = minetest.setting_getbool('natural_slopes.enable_shape_on_generation')
 	if value == nil then value = true end
 	return value
 end
 function natural_slopes.setting_generation_factor()
-	return tonumber(minetest.setting_get('natural_slopes.update_shape_generate_factor')) or 0.05
+	return tonumber(minetest.setting_get('natural_slopes.update_shape_generate_factor')) or 0.01
 end
 function natural_slopes.setting_generation_skip()
 	return tonumber(minetest.setting_get('natural_slopes.update_shape_generate_skip')) or 0
@@ -55,7 +55,7 @@ function natural_slopes.setting_enable_shape_on_dig_place()
 end
 function natural_slopes.setting_smooth_rendering()
 	local value = minetest.setting_getbool('natural_slopes.smooth_rendering')
-	if value == nil then value = false end
+	if value == nil then value = true end
 	return value
 end
 
